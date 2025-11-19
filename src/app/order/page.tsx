@@ -1,9 +1,9 @@
 "use client";
-import { redirect, useSearchParams } from "next/navigation";
+import { redirect, useParams } from "next/navigation";
 
 const Order = () => {
-	const searchParams = useSearchParams();
-	const trackingNumber = searchParams.get("tracking-number");
+	const searchParams = useParams();
+	const trackingNumber = searchParams["tracking-number"];
 
 	if (!trackingNumber) {
 		return redirect("/");
